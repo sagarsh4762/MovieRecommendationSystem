@@ -16,39 +16,23 @@ For solving the above given problem I am going to use pig script. Whole pig scri
 
 Store Data On HDFS
 
-$ hadoop fs -mkdir /gamedata
-$ hadoop fs -copyFromLocal /home/maniram/data/* /gamedata
+$ hadoop fs -mkdir /ml-100k
+$ hadoop fs -copyFromLocal /home/sagarsh/data/* /ml-100k
 
 Now you can count the number of match played by running pig script file
 
-Command to run total_counts.pig script file
+Command to run oldfivestarmovies.pig script file
 
   
-  $ pig -x mapreduce '/home/maniram/total_counts.pig'
+  $ pig -x mapreduce '/usr/local/hadoop/oldfivestarmovies.pig'
   
-  -- replace maniram with user name of your OS in above line
+  -- replace the location of your OS in above line
   
-Now you can extraxt information of each and player and you can find inter relation between them using following command
+Now you can extraxt information about movies.
 
-Command to run id_to_name.pig script file
+Command to run mostratedonestarmovies.pig script file
 
   
-  $ pig -x mapreduce '/home/maniram/id_to_name.pig'
-  -- replace maniram with user name of your OS in above line
+  $ pig -x mapreduce '/usr/local/hadoop/mostratedonestarmovies.pig'
+  -- replace the location of your OS in above line
   
-Now all the data have been saved in HDFS. You can acess these data by using hive in the tabular format. And by this way you can find relation between id and players name.
-
-For linking player_id file of HDFS to your hive you have to create External Hive table by giving location to these file in HDFS. You have to execute this query in hive shell
-
-$ hive
-
-hive> REATE EXTERNAL TABLE players(id STRING, name string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n' LOCATION '/gamedata/id_player_mapping/';
-
--- you can maintaing LOCATION value according to your HDFS file location in above script.
-
-Now run the following hive query which will show whole relation between id and player.
-
-
-hive> select * from players;
-So finally all the tree question mentioned above on the top of this file have been answered.
