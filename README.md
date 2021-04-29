@@ -2,7 +2,7 @@
 
 In this post, we'll tackle one of the challenges of learning Hadoop, and that's finding data sets that are realistic yet large enough to show the advantages of distributed processing, but small enough for a single developer to tackle. The data set we're using in this tutorial is movielens movie data. The data is available by year, and includes detailed descriptions of movies, ratings and users. This data is especially well-suited for our purposes, because a great deal of it is hand-encoded, so there are errors and malformed records that we need to handle.
 
-The data is available in gamedata directory.
+The data is available in ml-100k directory.
 
 Since we have comma-delimited, newline-terminated records, we can use Pig’s built-in PigStorage class to get some more in-depth information about our data set. Let’s start with a few basic questions:
 
