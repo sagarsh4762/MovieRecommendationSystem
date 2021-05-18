@@ -19,7 +19,7 @@ Store Data On HDFS
 $ hadoop fs -mkdir /ml-100k
 $ hadoop fs -copyFromLocal /home/sagarsh/data/* /ml-100k
 
-Now you can count the number of match old five star movies by running pig script file
+Now you can count the number of old five star movies by running pig script file
 
 Command to run oldfivestarmovies.pig script file
 
