@@ -10,7 +10,7 @@ How many old five star movies?
 
 How many most rated one star movies?
 
-From the given data set, we know that each game record starts with an id line like the one shown above. We can write a simple pig script to filter out those records and count them:
+From the given data set, we know that each movie record starts with an id line like the one shown above. We can write a simple pig script to filter out those records and count them:
 
 For solving the above given problem I am going to use pig script. Whole pig script query have been written caring about HDFS datastoreage. So for running the pig script query firstly you have to store the whole data on HDFS.
 
